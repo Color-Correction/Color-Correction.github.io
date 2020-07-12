@@ -1,0 +1,31 @@
+[class*="grid"] {
+    display: grid!important;
+}
+
+.grid-c05 {
+    grid-column-gap: .5rem;
+}
+
+.grid-c1 {
+    grid-column-gap: 1rem;
+}
+
+.grid-c2 {
+    grid-column-gap: 2rem;
+}
+
+.grid-r05 {
+    grid-row-gap: .5rem;
+}
+
+.grid-r03 {
+    grid-row-gap: .3rem;
+}
+
+.grid-r1 {
+    grid-row-gap: 1rem;
+}
+
+.grid-area {
+    grid-template-columns: repeat(2, 2fr);
+}
