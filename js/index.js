@@ -29,6 +29,7 @@ $(document).ready(function() {
     $(".btn-again").click(function() {
         answer.qw1 = -1;
         answer.qw2 = -1;
+        $("#question").text("Вопрос 1");
         $(".question").css("display", "block");
         $(".result").css("display", "none");
     });
