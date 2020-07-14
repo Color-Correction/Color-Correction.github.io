@@ -26,6 +26,7 @@
     grid-row-gap: 1rem;
 }
 
-.grid-area {
+.grid-area,
+.grid-res-but {
     grid-template-columns: repeat(2, 2fr);
 }
