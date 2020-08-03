@@ -20,11 +20,11 @@ $(document).ready(function() {
         if (answer.qw1 == -1) {
             answer.qw1 = 1;
             $("#question").text("Вопрос 2");
+            $(".color-div").css("background", "rgb(11%, 11%, 70%)");
         } else {
             $(".question").css("display", "none");
             $(".result").css("display", "block");
         }
-
     });
     $(".btn-again").click(function() {
         answer.qw1 = -1;
