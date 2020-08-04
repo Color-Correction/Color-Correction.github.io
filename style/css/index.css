@@ -4,6 +4,12 @@
     background: rgb(100%, 0%, 0%);
     margin-top: 45px;
 }
+.color-div2 {
+    height: 310px;
+    width: 310px;
+    background: rgb(11%, 11%, 70%);
+    margin-top: 45px;
+}
 
 #csd-pane-wheel {
     position: absolute;

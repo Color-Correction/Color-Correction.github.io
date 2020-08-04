@@ -6,6 +6,8 @@ var answer = {
 
 Number.prototype.toRad = function() { return this * Math.PI / 180; }
 $(document).ready(function() {
+    $(".question2").css("display", "none");
+    $(".question1").css("display", "block");
     $("#customRange1").on("input", function() {
         var range = this.value,
             alpha = range * 3;
@@ -16,21 +18,20 @@ $(document).ready(function() {
         $("#csd-dot1").css({ "left": coord.x, "top": coord.y });
         $("#csd-sample").css("background", "hsl(" + Number(100 - range * 1.8) + ", 100%, 50%)");
     });
-    $("#but-1").click(function() {
+    $(".button").click(function() {
         if (answer.qw1 == -1) {
             answer.qw1 = 1;
-            $("#question").text("Вопрос 2");
-            $(".color-div").css("background", "rgb(11%, 11%, 70%)");
+            $(".question1").css("display", "none");
+            $(".question2").css("display", "block");
         } else {
-            $(".question").css("display", "none");
+            $(".question2").css("display", "none");
             $(".result").css("display", "block");
         }
     });
     $(".btn-again").click(function() {
         answer.qw1 = -1;
         answer.qw2 = -1;
-        $("#question").text("Вопрос 1");
-        $(".question").css("display", "block");
+        $(".question1").css("display", "block");
         $(".result").css("display", "none");
     });
 });
