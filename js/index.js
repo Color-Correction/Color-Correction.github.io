@@ -30,8 +30,8 @@ $(document).ready(function() {
             flag_count =1;
         }
         $("#question1").text("Вопрос "+ flag_count);
-        console.log($(".color-div"));
-        $(".color-div").css("background", colors[flag_count-1]);
+        console.log($("#anger-div"));
+        $("#anger-div").css("background", colors[flag_count-1]);
         range =0;
         $("#customRange1").trigger("input");
        
