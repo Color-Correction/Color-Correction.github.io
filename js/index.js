@@ -22,13 +22,15 @@ $(document).ready(function() {
     $(".button").click(function() {
         flag_count++;
         answer[flag_count] = range;
+        console.log(flag_count);
+        console.log(colors.length);
         if (flag_count == colors.length) { 
             $(".question2").css("display", "none");
             $(".result").css("display", "block");
             flag_count =1;
         }
-        $(".question1").text("Вопрос "+ flag_count);
-        $(".question1").css("background", colors[flag_count-1]);
+        $("#question1").text("Вопрос "+ flag_count);
+        $("#question1").css("background", colors[flag_count-1]);
         range =0;
         $("#customRange1").trigger("input");
        
