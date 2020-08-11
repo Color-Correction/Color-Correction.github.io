@@ -22,7 +22,7 @@ $(document).ready(function() {
     $(".button").click(function() {
         flag_count++;
         answer[flag_count] = range;
-        if (flag_count == colors.length) { 
+        if (flag_count+1 == colors.length) { 
             $(".question2").css("display", "none");
             $(".result").css("display", "block");
             flag_count =1;
