@@ -29,8 +29,8 @@ $(document).ready(function() {
         }
         $("#question1").text("Вопрос "+ flag_count);
         console.log(flag_count);
-        console.log(colors[flag_count-1]);
-        $("#anger-div").css("background", colors[flag_count-1]);
+        console.log(colors[flag_count-2]);
+        $("#anger-div").css("background", colors[flag_count-2]);
         range =0;
         $("#customRange1").trigger("input");
        
