@@ -25,7 +25,7 @@ $(document).ready(function() {
         if (flag_count == colors.length) { 
             $(".question2").css("display", "none");
             $(".result").css("display", "block");
-            flag_count =1;
+            flag_count =0;
         }
         $("#question1").text("Вопрос "+ flag_count);
         console.log(flag_count);
