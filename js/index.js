@@ -23,7 +23,8 @@ $(document).ready(function() {
         flag_count++;
         answer[flag_count] = range;
         if (flag_count > colors.length) { 
-            $(".question2").css("display", "none");
+            console.log(answer);
+            $(".question1").css("display", "none");
             $(".result").css("display", "block");
             flag_count =1;
         }
