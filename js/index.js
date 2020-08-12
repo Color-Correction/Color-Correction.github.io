@@ -1,36 +1,46 @@
 var radius = 107;
-var answer = {};
+var answer = [];
 var flag_count = 1;
 var colors = ["rgb(100%, 0%, 0%)","rgb(0%, 60%, 60%)","rgb(11%, 11%, 70%)","rgb(100%, 100%, 0%)"];
-var range = 0;
+var range = 35;
 Number.prototype.toRad = function() { return this * Math.PI / 180; }
+function color_point(integer){
+    var  alpha = integer * 5.14;
+    var coord = {
+        x: 183 + radius * Math.sin(alpha.toRad()) + "px",
+        y: 183 + radius * Math.cos(alpha.toRad()) + "px"
+    };
+    var k = alpha > 180 ? (alpha > 270 ? 3.2: 2.2): (alpha > 90 ? 1.7 :1.8);
+    $("#csd-dot1").css({ "left": coord.x, "top": coord.y });
+    $("#csd-sample").css("background", "hsl(" + Number(100 - alpha*100*k/360) + ", 100%, 50%)");
+}
 $(document).ready(function() {
     $(".question2").css("display", "none");
     $(".question1").css("display", "block");
     $("#customRange1").on("input", function() {
         range = this.value;
-        var  alpha = range * 1.7 * 1.75;
-        var coord = {
-            x: 183 + radius * Math.sin(alpha.toRad()) + "px",
-            y: 183 + radius * Math.cos(alpha.toRad()) + "px"
-        };
-        var k = alpha > 180 ? 2.7:1.8;
-        $("#csd-dot1").css({ "left": coord.x, "top": coord.y });
-        $("#csd-sample").css("background", "hsl(" + Number(100 - range * k) + ", 100%, 50%)");
-     
+        color_point(range);
     });
     $(".button").click(function() {
-        flag_count++;
         answer[flag_count] = range;
-        if (flag_count > colors.length) { 
+        flag_count++;
+        if (flag_count > colors.length) {
             console.log(answer);
             $(".question1").css("display", "none");
             $(".result").css("display", "block");
             flag_count =1;
+            var text_answer = "<table class='table'>";
+            for(var i=1; i<answer.length; i++)
+            {
+                text_answer+="<tr><td>Вопрос № "+i+"</td><td>"+answer[i]+"</td></tr>";
+            }
+            text_answer+="</table>"
+            $("#answ-res").html(text_answer);
         }
         $("#question").text("Вопрос "+ flag_count);
         $("#anger-div").css("background", colors[flag_count-1]);
-        range =0;
+        range =35;
+        $("#customRange1").val(range);
         $("#customRange1").trigger("input");
        
     });
@@ -41,3 +51,6 @@ $(document).ready(function() {
     });
 });
 
+window.onload = function() {
+    color_point(range);
+};
