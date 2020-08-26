@@ -2,17 +2,17 @@ var radius = 107;
 var answer = [];
 var flag_count = 1;
 var colors = ["hsl(0, 100%,  50%)","hsl(150, 100%,  50%)","hsl(240, 100%,  50%)","hsl(60, 100%,  50%)"];
-var range = 35;
+var range = 180;
 Number.prototype.toRad = function() { return this * Math.PI / 180; }
 function color_point(integer){
-    var  alpha = integer * 5.14;
+    var  alpha = integer /** 5.14*/;
     var coord = {
         x: 183 + radius * Math.sin(alpha.toRad()) + "px",
         y: 183 + radius * Math.cos(alpha.toRad()) + "px"
     };
-    var k = alpha > 180 ? (alpha > 270 ? 3.2: 2.2): (alpha > 90 ? 1.7 :1.8);
+    //var k = alpha > 180 ? (alpha > 270 ? 3.2: 2.2): (alpha > 90 ? 1.7 :1.8);
     $("#csd-dot1").css({ "left": coord.x, "top": coord.y });
-    $("#csd-sample").css("background", "hsl(" + Number(100 - alpha*100*k/360) + ", 100%, 50%)");
+    $("#csd-sample").css("background", "hsl(" + /*Number(100 - alpha*100*k/360)*/ alpha + ", 100%, 50%)");
 }
 $(document).ready(function() {
     $(".question2").css("display", "none");
