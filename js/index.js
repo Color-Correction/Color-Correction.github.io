@@ -3,9 +3,12 @@ var answer = [];
 var flag_count = 1;
 var colors = ["hsl(0, 100%,  50%)","hsl(150, 100%,  50%)","hsl(240, 100%,  50%)","hsl(60, 100%,  50%)"];
 var range = 180;
-Number.prototype.toRad = function() { return this * Math.PI / 180; }
+Number.prototype.toRad = function() {
+   return this * Math.PI / 180;
+}
+
 function color_point(integer){
-    var  alpha = integer /** 5.14*/;
+    var  alpha = Number(integer); /** 5.14*/
     var coord = {
         x: 183 + radius * Math.sin(alpha.toRad()) + "px",
         y: 183 + radius * Math.cos(alpha.toRad()) + "px"
