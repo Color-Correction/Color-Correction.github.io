@@ -1,7 +1,7 @@
 var radius = 107;
 var answer = [];
 var flag_count = 1;
-var colors = ["rgb(100%, 0%, 0%)","rgb(0%, 60%, 60%)","rgb(11%, 11%, 70%)","rgb(100%, 100%, 0%)"];
+var colors = ["hsl(0, 100%,  50%)","hsl(150, 100%,  50%)","hsl(240, 100%,  50%)","hsl(60, 100%,  50%)"];
 var range = 35;
 Number.prototype.toRad = function() { return this * Math.PI / 180; }
 function color_point(integer){
